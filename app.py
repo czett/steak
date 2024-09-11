@@ -1,20 +1,14 @@
+from flask import Flask, render_template, redirect, url_for, session
 
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
+app = Flask(__name__)
 
-with open("credentials.yml", "r") as creds:
-    key = creds.readline()
+@app.route("/")
+def index():
+    return render_template("index.html")
 
-print(key)
+@app.route("/plinko")
+def plinko():
+    return render_template("plinko.html")
 
-uri = f"mongodb+srv://germannhugo:{key}@cluster0.bwmg4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-
-# Create a new client and connect to the server
-client = MongoClient(uri, server_api=ServerApi('1'))
-
-# Send a ping to confirm a successful connection
-try:
-    client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-except Exception as e:
-    print(e)
+if __name__ == "__main__":
+    app.run(debug=True, port=5700)

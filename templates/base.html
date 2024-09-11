@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>steak, not stake</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+</head>
+<body>
+    {% block navbar %}
+    <div class="nav">
+        <a href="/" class="logo">
+            Steak
+        </a>
+        <div class="links">
+            <div class="cash-count">$2349876</div>
+            <a href="#" class="link">Profile</a>
+            <a href="#" class="link">Contact</a>
+            <a href="#"><button>get started</button></a>
+        </div>
+    </div>
+    {% endblock %}
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% block footer %}
+    <div class="footer">
+        <a href="#" class="link">Home</a>
+        <a href="#" class="link">Profile</a>
+        <a href="#" class="link">Contact</a>
+        <a href="#" class="link">Legal</a>
+    </div>
+    {% endblock %}
+</body>
+</html>

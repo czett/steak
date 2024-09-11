@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+<div class="game-screen">
+    <div class="controls">
+        <h1>Plinko</h1>
+
+        <form>
+            <input type="number" placeholder="Place your bet:">
+            <select name="plinko-risk" id="plinko-risk">
+                <option value="1" selected>Low</option>
+                <option value="2">Medium</option>
+                <option value="4">High</option>
+            </select>
+            <button>Bet</button>
+        </form>
+    </div>
+    <div class="canvas"></div>
+</div>
+
+{% endblock %}

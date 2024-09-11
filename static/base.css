@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=SUSE:wght@100..800&display=swap');
+
+*{
+    font-family: 'SUSE';
+}
+
+::selection{
+    background: var(--pr);
+    color: var(--bg);
+}
+
+:root{
+    --rlpad: 20vw;
+    --brad: 1.75rem;
+    --fg: #000;
+    --bg: #efefef;
+    --pr: #27801a;
+    --sc: #d4040d;
+    --tr: #053509;
+    --ac: #80ea60;
+}
+
+body, html{
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: var(--bg);
+}
+
+.nav{
+    height: 10vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--rlpad);
+    box-sizing: border-box;
+    background-color: var(--bg);
+    z-index: 1000;
+}
+
+.nav .links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.nav .links a, .nav .links .cash-count{
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--fg);
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: var(--fg);
+}
+
+button{
+    background-color: var(--pr);
+    color: var(--bg);
+    border-radius: var(--brad);
+    outline: none;
+    border: none;
+    font-weight: 700;
+    transition: 500ms;
+    cursor: pointer;
+    padding: 1vh 2vh;
+}
+
+.nav .links button{
+    background-color: var(--pr);
+    color: var(--bg);
+}
+
+.nav .links button:hover, button:hover{
+    filter: brightness(1.2);
+    scale: 1.01;
+}
+
+.nav .logo{
+    font-size: 2.5rem;
+    font-family: 'Pacifico';
+    user-select: none;
+    transition: 1500ms;
+}
+
+.nav .logo:hover{
+    color: var(--pr);
+}
+
+.content{
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 10vh var(--rlpad);
+}
+
+.footer{
+    width: 100vw;
+    box-sizing: border-box;
+    /* margin-top: 5vh; */
+    display: flex;
+    justify-content: space-between;
+    padding: 3vh var(--rlpad);
+    align-items: center;
+    background: var(--pr);
+}
+
+.footer *{
+    color: var(--bg);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+}
+
+.cash-count{
+    font-weight: 800 !important;
+}
+
+/* .steak{
+    font-family: 'Pacifico';
+} */
+
+/* startpage */
+
+.banner{
+    aspect-ratio: 3;
+    width: 100%;
+    border-radius: var(--brad);
+    background-color: var(--tr);
+    padding: 2vh;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.banner *{
+    color: var(--bg);
+}
+
+.banner .title{
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.banner .subtitle{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.banner .textbox button{
+    margin-top: 1vh;
+}
+
+.banner .textbox{
+    position: absolute;
+    box-sizing: border-box;
+    padding: calc(0.1 * var(--rlpad));
+    inset: auto auto 0 0;
+}
+
+.games-chart{
+    /* margin-top: 5vh; */
+    width: 100%;
+    display: grid;
+    gap: 1vh;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.games-chart .game{
+    width: auto;
+    aspect-ratio: 1.5;
+    background-color: #aaa;
+    border-radius: var(--brad);
+    position: relative;
+}
+
+.games-chart .game .textbox{
+    position: absolute;
+    padding: calc(0.1 * var(--rlpad));
+    inset: auto auto 0 0;
+}
+
+.games-chart .game .textbox .name{
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.games-chart .game .textbox .description{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.games-chart .game .play-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+    border-radius: var(--brad);
+    background-color: var(--pr);
+    aspect-ratio: 1;
+    width: 2.75rem;
+    position: absolute;
+    transition: 500ms;
+    inset: auto calc(0.1 * var(--rlpad)) calc(0.1 * var(--rlpad)) auto;
+    cursor: pointer;
+}
+
+.games-chart .game .play-button span{
+    font-size: 2rem;
+    rotate: 180deg;
+    color: var(--bg);
+}
+
+.games-chart .game .play-button:hover{
+    filter: brightness(1.15);
+    scale: 1.1;
+}
+
+.section-title{
+    font-size: 3rem;
+    line-height: 1;
+    margin: 5vh 0;
+    margin-bottom: 3vh;
+    font-weight: 800;
+}
+
+/* plinko */
+
+.game-screen{
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+    border-radius: var(--brad);
+    border: 2px solid var(--pr);
+    margin-top: 3vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.game-screen .controls{
+    height: 100%;
+    width: 30%;
+    border-right: 2px solid var(--pr);
+    box-sizing: border-box;
+    padding: calc(0.1 * var(--rlpad));
+}
+
+.game-screen .controls h1{
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 2vh;
+    font-size: 3rem;
+}
+
+.game-screen .controls form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.game-screen .controls form input, .game-screen .controls form select{
+    outline: none;
+    border: 2px solid var(--pr);
+    border-radius: var(--brad);
+    background: transparent;
+    padding: 1vh;
+    margin-bottom: 1vh;
+    width: 75%;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+}
+
+.game-screen .controls form button{
+    background: var(--pr);
+    width: 75%;
+    aspect-ratio: 5;
+    font-size: 1.2rem;
+}
