@@ -5,18 +5,20 @@
 <div class="game-screen">
     <div class="controls">
         <h1>Plinko</h1>
-
         <form>
-            <input type="number" placeholder="Place your bet:">
-            <select name="plinko-risk" id="plinko-risk">
+            <input type="number" id="plinko-bet" placeholder="Place your bet:">
+            <select name="plinko-risk" id="plinko-risk" required>
                 <option value="1" selected>Low</option>
                 <option value="2">Medium</option>
                 <option value="4">High</option>
             </select>
-            <button>Bet</button>
+            <button type="submit" onfocus="plinko()">Bet</button>
         </form>
     </div>
-    <div class="canvas"></div>
+    <div class="canvas">
+        <div class="ball"></div>
+        <div class="gradient"></div>
+    </div>
 </div>
 
 {% endblock %}
