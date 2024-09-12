@@ -6,18 +6,20 @@
     <div class="controls">
         <h1>Plinko</h1>
         <form>
-            <input type="number" id="plinko-bet" placeholder="Place your bet:">
+            <input type="number" id="plinko-bet" placeholder="Place your bet:" required>
             <select name="plinko-risk" id="plinko-risk" required>
-                <option value="1" selected>Low</option>
-                <option value="2">Medium</option>
-                <option value="4">High</option>
+                <option value="1" selected>Low (1x)</option>
+                <option value="2">Medium (2x)</option>
+                <option value="4">High (4x)</option>
+                <option value="8">Baller (8x)</option>
             </select>
-            <button type="submit" onfocus="plinko()">Bet</button>
+            <button type="submit" id="betButton">Bet</button>
         </form>
     </div>
     <div class="canvas">
         <div class="ball"></div>
         <div class="gradient"></div>
+        <div class="change-popup">$356</div>
     </div>
 </div>
 

@@ -9,6 +9,15 @@
     color: var(--bg);
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: var(--bg);
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--tr);
+}
+
 :root{
     --rlpad: 20vw;
     --brad: 1.75rem;
@@ -72,6 +81,16 @@ button{
     transition: 500ms;
     cursor: pointer;
     padding: 1vh 2vh;
+}
+
+button:disabled{
+    filter: saturate(0);
+    cursor: not-allowed;
+}
+
+button:disabled:hover{
+    filter: saturate(0) brightness(1);
+    scale: 1;
 }
 
 .nav .links button{
@@ -295,8 +314,9 @@ button{
     position: absolute;
     inset: auto auto 0 0;
     width: 100%;
-    aspect-ratio: 20;
-    background: linear-gradient(to right, var(--tr), var(--pr), var(--ac), var(--pr), var(--tr));
+    aspect-ratio: 40;
+    background: linear-gradient(to right, var(--pr), yellow, orange, red, orange, yellow, var(--pr));
+    z-index: 2;
 }
 
 .game-screen .canvas .ball{
@@ -305,11 +325,104 @@ button{
     aspect-ratio: 1;
     width: 2vh;
     border-radius: 50%;
-    background-color: var(--pr);
+    background-color: var(--fg);
+    z-index: 10;
+}
+
+.change-popup{
+    position: absolute;
+    inset: 50% auto auto 50%;
+    font-size: 10rem;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Fully transparent */
+    transition: opacity 0.5s ease-in-out, visibility 0s 2s; /* Visibility delay matches fade-out */
+}
+
+.popup-plinko-animated{
+    animation-name: none; /* Remove existing animation, now we're using opacity for fade */
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Ensure it's visible */
+    transition: opacity 0.5s ease-in-out; /* Fade-in */
+}
+
+.popup-gain{
+    color: var(--pr);
+}
+
+.popup-loss{
+    color: var(--sc);
+}
+
+@keyframes changePopUpPlinko{
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }
+    40%{
+        visibility: visible;
+        opacity: 1;
+    }
+    100%{
+        visibility: hidden;
+        opacity: 0;
+    }
 }
 
 @media (width < 1500px){
     :root{
         --rlpad: 5vw;
+    }
+
+    .banner .textbox, .games-chart .game .textbox{
+        padding: 3vh !important;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .games-chart .game .play-button{
+        inset: 3vh 3vh auto auto;
+    }
+}
+
+@media (width < 775px){
+    :root{
+        --rlpad: 5vw;
+    }
+
+    .nav{
+        justify-content: center;
+    }
+
+    .nav .links{
+        display: none;
+    }
+
+    .banner, .games-chart .game{
+        aspect-ratio: 1;
+        overflow: hidden;
+    }
+    
+    .banner .textbox, .games-chart .game .textbox{
+        padding: 3vh !important;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+    
+    .banner .textbox .title{
+        font-size: 1.5rem;
+    }
+
+    .banner .textbox .subtitle{
+        font-size: 1rem;
+    }
+
+    .games-chart{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .games-chart .game{
+        aspect-ratio: 2;
     }
 }
