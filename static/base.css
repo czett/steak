@@ -261,6 +261,7 @@ button:disabled:hover{
     display: flex;
     justify-content: start;
     align-items: center;
+    position: relative;
 }
 
 .game-screen .controls{
@@ -368,6 +369,75 @@ button:disabled:hover{
         visibility: hidden;
         opacity: 0;
     }
+}
+
+/* fwheel */
+
+.fwheel-wheel-container{
+    width: 40%;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fwheel-wheel-container .wheel-pattern{
+    width: 100%;
+    aspect-ratio: 1;
+    background: conic-gradient(
+    black 0% 5%, var(--sc) 5% 10%, 
+    black 10% 15%, var(--sc) 15% 20%, 
+    black 20% 25%, var(--sc) 25% 30%, 
+    black 30% 35%, var(--sc) 35% 40%, 
+    black 40% 45%, var(--sc) 45% 50%, 
+    black 50% 55%, var(--sc) 55% 60%, 
+    black 60% 65%, var(--sc) 65% 70%, 
+    black 70% 75%, var(--sc) 75% 80%, 
+    black 80% 85%, var(--sc) 85% 90%, 
+    black 90% 95%, var(--sc) 95% 100%
+    );
+    transition: 5000ms;
+    /* rotate: 9deg; */
+}
+
+.fwheel-wheel-container .wheel-center{
+    width: 75%;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    background-color: var(--bg);
+    position: absolute;
+}
+
+.spin-fwheel-btn{
+    position: absolute;
+    scale: 1.5;
+    background: var(--sc);
+}
+
+.spin-fwheel-btn:hover{
+    scale: 1.5;
+}
+
+.fwheel-pin{
+    position: absolute;
+    inset: 10% auto auto 50%;
+    transform: translateX(-50%);
+    aspect-ratio: 0.5;
+    width: 5%;
+    background-color: #cfb367;
+    border-radius: 50% 50% 10% 10%;
+}
+
+.fwheel-winner{
+    position: absolute;
+    inset: auto auto 25% 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
 }
 
 @media (width < 1500px){

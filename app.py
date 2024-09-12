@@ -10,5 +10,9 @@ def index():
 def plinko():
     return render_template("plinko.html")
 
+@app.route("/fortunewheel")
+def fortunewheel():
+    return render_template("fortunewheel.html")
+
 if __name__ == "__main__":
     app.run(debug=True, port=5700)
