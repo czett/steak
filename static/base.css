@@ -307,3 +307,9 @@ button{
     border-radius: 50%;
     background-color: var(--pr);
 }
+
+media (width < 1500px){
+    :root{
+        --rlpad: 5vw;
+    }
+}
