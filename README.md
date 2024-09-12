@@ -30,7 +30,7 @@ We have some delicious features planned for future releases:
 
 ## 👨‍💻 Contributing
 
-We welcome contributions! If you’d like to contribute to Steak, please fork the repo and create a pull request with your changes. For detailed instructions, please refer to the [contributing guidelines](CONTRIBUTING.md).
+We welcome contributions! If you’d like to contribute to Steak, please fork the repo and create a pull request with your changes.
 
 ## 📜 License
 
