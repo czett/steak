@@ -308,7 +308,7 @@ button{
     background-color: var(--pr);
 }
 
-media (width < 1500px){
+@media (width < 1500px){
     :root{
         --rlpad: 5vw;
     }
