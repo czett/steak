@@ -1,8 +1,11 @@
 from flask import Flask, render_template, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 
+with open("credentials.yml", "r") as creds:
+    cstring = creds.readlines()[0]
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://user:password@host:port/dbname'
+app.config['SQLALCHEMY_DATABASE_URI'] = cstring
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
