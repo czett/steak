@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
             clearInterval(intervalId);
         }
 
+        ball.style.top = '0px';
+        ball.style.left = '50%';
+
         ballPosition = 0; // Reset ball position
         let direction = Math.random() < 0.5 ? -1 : 1; // Random direction (left or right)
 
